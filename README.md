@@ -280,6 +280,7 @@ The output will be following:
              1          1 szabist
              2          1 szabist1 (local)
 **8: SETTING UP SQUID**
+
 Install squid using the following command:
 
     dnf install squid -y
