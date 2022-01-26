@@ -40,6 +40,7 @@ the command will be
        ping szabist
        ping szabist1
 **2: STOPPING UNNECESSARY SERVICES AND RUNNING IP TABLES COMMAND**
+
 In this step first we need to disable services like cups.path. The command below will be used for disabling:
 
     systemctl disable cups.path
@@ -60,6 +61,7 @@ Now we have to save this IP table by typing below command.
     sudo service iptables save
 
 **3: CHECKING NTP SERVICE**
+
 Now we have to check if NTP(Network Time Protocol) is installed and working on both machines or not because it is important to check if both servers are synchronized with each other.
 Type below command to check NTP service is installed or not.  
 
@@ -80,6 +82,7 @@ Now, type this command to allow the NTP incoming requests.
     firewall-cmd --permanent --add-service=ntp
     firewall-cmd --reload
 **4: MAKING LVM FOR DRBD**
+
 **4a) Creating partitions for LVM** 
 First we have to create LVM partitions on both machines.
 
@@ -115,6 +118,7 @@ Now make the filesystem by typing the command:
     mkfs.ext3 /dev/mapper/vgdrbd-lvdrbd
 
 **5: INCLUDING ENTRIES IN SYSCTL CONFIG FILE**
+
 We will add few entries in the sysctl config file of both the machines by typing below command.
 
     vi etc/sysctl.conf
@@ -127,6 +131,7 @@ Now look at the output by typing below command:
 
     sysctl -p
 **6: INSTALLING AND CONFIGURING DRBD**
+
 By the help of the following command, you can install drbd on both machines:
 `dnf -y install https://download-ib01.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/d/drbd-9.17.0-1.el8.x86_64.rpm`
 
@@ -224,6 +229,7 @@ Type and run this command to print the list of files in the /opt directory:
 All the files stored in the DRBD device will be shown there. Here, the installation and configuration of DRBD is successful. 
 
 **7: INSTALLING AND CONFIGURING PACEMAKER**
+
 Now, enable the High Availability Repo and install pacemaker:
 
     dnf --enablerepo=ha -y install pacemaker pcs
