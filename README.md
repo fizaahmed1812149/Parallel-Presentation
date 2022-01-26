@@ -7,10 +7,12 @@ These are the steps we are going to follow to achieve synchronization:
 2. Stopping unnecessary services and running iptables command
 3. Checking NTP services
 4. Making LVM for DRBD 
+
 4a) Creating partitions
 4b) Creating physical volume
 4c) Creating volume group
 4d) Create logical volume
+
 5. Including entries in sysctl config file
 6. Installing and Configuring DRBD
 7. Installing and Configuring Pacemaker
