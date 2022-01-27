@@ -56,9 +56,6 @@ To check output type the below command.
 
     iptables -L
 
-Now we have to save this IP table by typing below command.
-
-    sudo service iptables save
 
 **3: CHECKING NTP SERVICE**
 
